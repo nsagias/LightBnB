@@ -13,13 +13,6 @@ VALUES
   (2, 'Blue title Home', 'description', 'bnb_thumbs.com/blue', 'bnb_cover.com/blue', 200, 2, 2, 2, 'Canada', '2 Blue Street', 'Blue City', 'Ontario', 'M0M0M0', TRUE),
   (3, 'Green title Home', 'description', 'bnb_thumbs.com/green', 'bnb_cover.com/green', 300, 3, 3, 3, 'Canada', '3 Green Street', 'Green City', 'Ontario', 'M0M0M0', TRUE);
 
-CREATE TABLE reservations (
-  id SERIAL PRIMARY KEY NOT NULL,
-  start_date DATE NOT NULL,
-  end_date DATE NOT NULL,
-  property_id INTEGER REFERENCES properties(id) ON DELETE CASCADE,
-  guest_id INTEGER REFERENCES users(id) ON DELETE CASCADE
-);
 
 INSERT INTO 
   reservations (start_date, end_date, property_id, guest_id)
