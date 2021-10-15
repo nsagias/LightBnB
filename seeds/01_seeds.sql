@@ -1,4 +1,4 @@
-
+-- \i seeds/01_seeds.sql
 INSERT INTO
   users (name, email, password)
 VALUES
@@ -17,9 +17,9 @@ VALUES
 INSERT INTO 
   reservations (start_date, end_date, property_id, guest_id)
 VALUES
-  (2021-10-14 00:35:39.70551, 2021-10-15 00:35:39.70551, 1, 1),
-  (2021-10-14 00:35:39.70551, 2021-10-15 00:35:39.70551, 2, 2),
-  (2021-10-14 00:35:39.70551, 2021-10-15 00:35:39.70551, 3, 3);
+  ('2021-10-14', '2021-10-15', 1, 1),
+  ('2021-10-14', '2021-10-15', 2, 2),
+  ('2021-10-14', '2021-10-15', 3, 3);
 
 INSERT INTO
   property_reviews (guest_id, property_id, reservation_id, rating, message)
