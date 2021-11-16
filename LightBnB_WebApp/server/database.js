@@ -32,7 +32,7 @@ const getUserWithEmail = function(email) {
       return res.rows[0];
     })
     .catch(err => err);
-}
+};
 exports.getUserWithEmail = getUserWithEmail;
 
 /**
@@ -56,7 +56,7 @@ const getUserWithId = function(id) {
       return res.rows[0];
     })
     .catch(err => err);
-}
+};
 exports.getUserWithId = getUserWithId;
 
 
@@ -114,7 +114,7 @@ const getAllReservations = function(guest_id, limit = 10) {
       return res.rows[0];
     })
     .catch(err => err);
-}
+};
 
 exports.getAllReservations = getAllReservations;
 
@@ -203,7 +203,7 @@ exports.getAllProperties = getAllProperties;
 
 
 
-const addProperty = function (property) {
+const addProperty = function(property) {
   const queryParams = [
     property.owner_id,
     property.title,
