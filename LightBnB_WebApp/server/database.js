@@ -168,6 +168,10 @@ const addProperty = function(property) {
   return Promise.resolve(property);
 }
 
+
+// const aaddProperty = function (property) {
+  const queryParams = [
+  property
   // owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
 
   // title VARCHAR(255) NOT NULL,
@@ -184,8 +188,7 @@ const addProperty = function(property) {
   // city VARCHAR(255) NOT NULL,
   // province VARCHAR(255) NOT NULL,
   // post_code VARCHAR(255) NOT NULL,
-// const addUser = function (user) {
-//   const queryParams = [user.name, user.password, user.email];
+];
 //   const queryString = `
 //   INSERT INTO users (name, password, email)
 //   VALUES ($1, $2, $3)
