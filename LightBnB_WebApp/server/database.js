@@ -171,7 +171,7 @@ const addProperty = function(property) {
 
 // const aaddProperty = function (property) {
   const queryParams = [
-  property.property.owner_id,
+  property.owner_id,
   property.title, 
   property.description, 
   property.thumbnail_photo_url,
@@ -188,24 +188,24 @@ const addProperty = function(property) {
 ];
   const queryString = `
   INSERT INTO properties (
-    property.property.owner_id,
-    property.title, 
-    property.description, 
-    property.thumbnail_photo_url,
-    property.cover_photo_url, 
-    property.cost_per_night,
-    property.parking_spaces,
-    property.number_of_bathrooms, 
-    property.number_of_bedrooms ,
-    property.country,
-    property.street, 
-    property.city, 
-    property.province, 
-    property.post_code 
+    owner_id,
+    title, 
+    description, 
+    thumbnail_photo_url,
+    cover_photo_url, 
+    cost_per_night,
+    parking_spaces,
+    number_of_bathrooms, 
+    number_of_bedrooms ,
+    country,
+    street, 
+    city, 
+    province, 
+    post_code 
   )
-//   VALUES ($1, $2, $3)
-//   RETURNING *;
-//   `;
+    VALUES ($1, $2, $3)
+    RETURNING *;
+    `;
 
 //   return pool
 //     .query(queryString, queryParams)
