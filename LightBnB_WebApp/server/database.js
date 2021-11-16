@@ -29,7 +29,7 @@ const getUserWithEmail = function(email) {
   return pool
     .query(queryString, queryParams)
     .then((res) => {
-    return res.rows[0];
+      return res.rows[0];
     })
     .catch(err => err);
 }
@@ -42,7 +42,7 @@ exports.getUserWithEmail = getUserWithEmail;
  */
 
 
-const getUserWithId= function(id) {
+const getUserWithId = function(id) {
   const queryParams = [id];
   const queryString = `
     SELECT *
@@ -67,7 +67,7 @@ exports.getUserWithId = getUserWithId;
  */
 
 
-const addUser = function (user) {
+const addUser = function(user) {
   const queryParams = [user.name, user.password, user.email];
   const queryString = `
   INSERT INTO users (name, password, email)
@@ -95,7 +95,7 @@ exports.addUser = addUser;
 
 
 const getAllReservations = function(guest_id, limit = 10) {
-  const queryParams = [guest_id, limit ];
+  const queryParams = [guest_id, limit];
   const queryString = `
     SELECT properties.*, reservations.*, avg(rating) as average_rating
     FROM reservations
@@ -111,7 +111,7 @@ const getAllReservations = function(guest_id, limit = 10) {
   return pool
     .query(queryString, queryParams)
     .then((res) => {
-    return res.rows[0];
+      return res.rows[0];
     })
     .catch(err => err);
 }
@@ -129,7 +129,7 @@ exports.getAllReservations = getAllReservations;
 
 
 
-const getAllProperties = function (options, limit = 10) {
+const getAllProperties = function(options, limit = 10) {
   // 1
   const queryParams = [];
   // 2
@@ -163,7 +163,7 @@ const getAllProperties = function (options, limit = 10) {
   }
 
   // 4
- 
+
   queryString += `GROUP BY properties.id `;
 
   if (options.minimum_rating) {
@@ -184,11 +184,11 @@ const getAllProperties = function (options, limit = 10) {
 
   // 6
   return pool
-      .query(queryString, queryParams)
-      .then((res) => {
-        return res.rows;
-      })
-      .catch(err => console.log('this is err',err));
+    .query(queryString, queryParams)
+    .then((res) => {
+      return res.rows;
+    })
+    .catch(err => console.log('this is err', err));
 };
 
 exports.getAllProperties = getAllProperties;
@@ -205,21 +205,21 @@ exports.getAllProperties = getAllProperties;
 
 const addProperty = function (property) {
   const queryParams = [
-  property.owner_id,
-  property.title, 
-  property.description, 
-  property.thumbnail_photo_url,
-  property.cover_photo_url, 
-  property.cost_per_night,
-  property.parking_spaces,
-  property.number_of_bathrooms, 
-  property.number_of_bedrooms ,
-  property.country,
-  property.street, 
-  property.city, 
-  property.province, 
-  property.post_code 
-];
+    property.owner_id,
+    property.title,
+    property.description,
+    property.thumbnail_photo_url,
+    property.cover_photo_url,
+    property.cost_per_night,
+    property.parking_spaces,
+    property.number_of_bathrooms,
+    property.number_of_bedrooms,
+    property.country,
+    property.street,
+    property.city,
+    property.province,
+    property.post_code
+  ];
   const queryString = `
   INSERT INTO properties (
     owner_id,
