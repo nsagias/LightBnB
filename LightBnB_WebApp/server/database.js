@@ -161,15 +161,15 @@ exports.getAllProperties = getAllProperties;
  * @param {{}} property An object containing all of the property details.
  * @return {Promise<{}>} A promise to the property.
  */
-const addProperty = function(property) {
-  const propertyId = Object.keys(properties).length + 1;
-  property.id = propertyId;
-  properties[propertyId] = property;
-  return Promise.resolve(property);
-}
+// const addProperty = function(property) {
+//   const propertyId = Object.keys(properties).length + 1;
+//   property.id = propertyId;
+//   properties[propertyId] = property;
+//   return Promise.resolve(property);
+// }
 
 
-// const aaddProperty = function (property) {
+const addProperty = function (property) {
   const queryParams = [
   property.owner_id,
   property.title, 
@@ -207,11 +207,11 @@ const addProperty = function(property) {
     RETURNING *;
     `;
 
-//   return pool
-//     .query(queryString, queryParams)
-//     .then((res) => {
-//       return res.rows[0];
-//     })
-//     .catch(err => err);
-// };
+  return pool
+    .query(queryString, queryParams)
+    .then((res) => {
+      return res.rows[0];
+    })
+    .catch(err => err);
+};
 exports.addProperty = addProperty;
