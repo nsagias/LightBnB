@@ -171,21 +171,20 @@ const addProperty = function(property) {
 
 // const aaddProperty = function (property) {
   const queryParams = [
-
-  // property.property.owner_id,
-  // property.title, 
-  // property.description, 
-  // property.thumbnail_photo_url,
-  // property.cover_photo_url, 
-  // property.cost_per_night,
-  // property.parking_spaces,
-  // property.number_of_bathrooms, 
-  // property.number_of_bedrooms ,
-  // property.country,
-  // property.street, 
-  // property.city, 
-  // property.province, 
-  // property.post_code 
+  property.property.owner_id,
+  property.title, 
+  property.description, 
+  property.thumbnail_photo_url,
+  property.cover_photo_url, 
+  property.cost_per_night,
+  property.parking_spaces,
+  property.number_of_bathrooms, 
+  property.number_of_bedrooms ,
+  property.country,
+  property.street, 
+  property.city, 
+  property.province, 
+  property.post_code 
 ];
 //   const queryString = `
 //   INSERT INTO users (name, password, email)
