@@ -167,4 +167,20 @@ const addProperty = function(property) {
   properties[propertyId] = property;
   return Promise.resolve(property);
 }
+
+// const addUser = function (user) {
+//   const queryParams = [user.name, user.password, user.email];
+//   const queryString = `
+//   INSERT INTO users (name, password, email)
+//   VALUES ($1, $2, $3)
+//   RETURNING *;
+//   `;
+
+//   return pool
+//     .query(queryString, queryParams)
+//     .then((res) => {
+//       return res.rows[0];
+//     })
+//     .catch(err => err);
+// };
 exports.addProperty = addProperty;
